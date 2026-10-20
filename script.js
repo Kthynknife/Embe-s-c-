@@ -1,5 +1,5 @@
 // Background Icon động
-const icons = ['🐱', '🌷', '❤️', '🌸', '✨', '☁️', '💖'];
+const icons = ['🐿️', '🌷', '❤️', '🌸', '✨', '🎀', '🌰'];
 const container = document.getElementById('iconContainer');
 
 function createIcon() {
@@ -57,12 +57,12 @@ function checkPin() {
 // Danh sách lời chúc
 const wishes = [
     {
-        title: "Gửi nàng một ngày thật đẹp 🌷",
-        text: "Chúc bạn một ngày 20/10 ngập tràn hoa thơm, nắng ấm và những điều dịu dàng nhất. Mong bạn luôn được yêu thương bằng sự chân thành, được trân trọng vì chính con người mình và luôn có đủ niềm vui để mỉm cười mỗi ngày. Chúc mọi điều đẹp đẽ sẽ luôn tìm đến bạn!"
+        title: "Gửi sóc một ngày rạng rỡ 🌷",
+        text: "abe đã không thể ở bên và không thể trao cho bé 1 bó hoa nhưng a mong là bé bông hoa xinh nhất của đời a luôn rạng rỡ với nụ cười nhó mãi không tàn nhó. a sẽ bù bé thật nhiều. a yêu sóc 🌷"
     },
     {
-        title: "Cảm ơn vì bạn đã đến với thế giới này 💕",
-        text: "Cảm ơn bạn vì đã mang đến cho cuộc sống này biết bao điều ấm áp, dù đôi khi chính bạn cũng có những ngày mệt mỏi. Nhân ngày 20/10, mong bạn tạm gác lại những lo toan, dành thời gian chiều chuộng bản thân và nhận về thật nhiều yêu thương."
+        title: "Cảm ơn sóc vì đã đến bên a này 💕",
+        text: "cảm ơn bé đã đến bên đồng hành và ủng hộ a dù a không hoàn hảo, cảm ơn bé đã cho a cơ hội được yêu thương và quan tâm bé. a thưn bé❤️"
     }
 ];
 
