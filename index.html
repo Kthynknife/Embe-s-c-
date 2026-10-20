@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng 20/10 🌸</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Background icon động -->
+    <div class="background-icons" id="iconContainer"></div>
+
+    <!-- MÀN HÌNH 1: NHẬP MẬT KHÃU -->
+    <div class="screen" id="lockScreen">
+        <div class="card">
+            <div class="ribbon">🎀</div>
+            <h2>Mật mã mở quà</h2>
+            <p class="subtitle">Nhập 4 số để mở bó hoa nhé</p>
+            
+            <div class="heart-indicator">
+                <span class="dot">❤️</span>
+                <span class="dot">❤️</span>
+                <span class="dot">❤️</span>
+                <span class="dot">❤️</span>
+            </div>
+
+            <div class="keypad">
+                <button onclick="pressNum(1)">1</button>
+                <button onclick="pressNum(2)">2</button>
+                <button onclick="pressNum(3)">3</button>
+                <button onclick="pressNum(4)">4</button>
+                <button onclick="pressNum(5)">5</button>
+                <button onclick="pressNum(6)">6</button>
+                <button onclick="pressNum(7)">7</button>
+                <button onclick="pressNum(8)">8</button>
+                <button onclick="pressNum(9)">9</button>
+                <button onclick="pressNum('back')">⌫</button>
+                <button onclick="pressNum(0)">0</button>
+                <button onclick="pressNum('ok')">➔</button>
+            </div>
+            
+            <p class="hint">Gợi ý: ngày tình yêu chớm nở của đôi mình 🌷</p>
+            <p class="error-msg" id="errorMsg"></p>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH 2: BÓ HOA TULIP CHUẨN NHƯ ẢNH -->
+    <div class="screen hidden" id="mainScreen">
+        <h1 class="main-title">Chúc mừng 20/10 🌸</h1>
+        
+        <!-- Bó hoa đổi thành hình ảnh tùy chỉnh -->
+        <div class="bouquet-container" id="bouquetBtn" onclick="handleBouquetClick(event)">
+            <img src="soc.png" alt="Quà" style="width: 220px; height: auto;" draggable="false">
+        </div>
+        
+        <p class="click-hint">Chạm vào bông hoa nhé 🌷</p>
+    </div>
+
+    <!-- POPUP THIỆP LỜI CHÚC (ĐÚNG KIỂU TRONG ẢNH) -->
+    <div class="modal-overlay hidden" id="modalOverlay">
+        <div class="modal-card">
+            <h3 id="modalTitle">Gửi nàng một ngày thật đẹp 🌷</h3>
+            <p id="typedText"></p>
+            
+            <div class="modal-actions">
+                <span class="next-wish" onclick="nextWish()">Lời chúc khác &gt;</span>
+                <button class="close-btn" onclick="closePopup()">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nơi chứa hiệu ứng nổ icon khi click vào bó hoa -->
+    <div class="burst-container" id="burstContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

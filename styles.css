@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    overflow: hidden;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-icons, .burst-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+.burst-container { z-index: 15; }
+
+.floating-icon {
+    position: absolute;
+    bottom: -60px;
+    animation: floatUpAndSway linear infinite;
+}
+
+@keyframes floatUpAndSway {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    15% { opacity: 0.7; }
+    85% { opacity: 0.7; }
+    100% { transform: translateY(-110vh) translateX(30px) rotate(360deg); opacity: 0; }
+}
+
+.screen { position: relative; z-index: 2; }
+.hidden { display: none !important; }
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(233, 30, 99, 0.15);
+    text-align: center;
+    width: 320px;
+    border: 2px solid #ffccd5;
+}
+
+.ribbon { font-size: 35px; margin-bottom: -10px; }
+.card h2 { color: #d81b60; margin-bottom: 5px; }
+.subtitle { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+.heart-indicator {
+    display: flex; justify-content: center; gap: 12px; margin-bottom: 25px; font-size: 20px;
+}
+.heart-indicator span { opacity: 0.3; transition: 0.2s; }
+.heart-indicator span.active { opacity: 1; transform: scale(1.2); }
+
+.keypad {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;
+}
+.keypad button {
+    background: #fff; border: 2px solid #f8bbd0; border-radius: 50%;
+    width: 60px; height: 60px; font-size: 20px; font-weight: bold; color: #c2185b;
+    cursor: pointer; margin: 0 auto; transition: 0.2s;
+}
+.keypad button:hover { background: #ff80ab; color: white; border-color: #ff80ab; transform: scale(1.05); }
+
+.hint { font-size: 12px; color: #ad1457; }
+.error-msg { color: red; font-size: 13px; height: 15px; margin-top: 5px; }
+
+/* Bó hoa tulip tinh chỉnh chuẩn giống ảnh */
+#mainScreen { text-align: center; }
+.main-title { 
+    color: #d81b60; 
+    font-size: 32px; 
+    font-family: cursive; 
+    font-weight: bold;
+    margin-bottom: 25px; 
+}
+
+.bouquet-container {
+    cursor: pointer;
+    display: inline-block;
+    animation: floatBouquet 3s ease-in-out infinite;
+    padding: 10px;
+}
+
+@keyframes floatBouquet {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.tulips-row { font-size: 38px; display: flex; justify-content: center; gap: 2px; margin-bottom: -10px; }
+.stems { font-size: 28px; color: #4caf50; letter-spacing: -2px; line-height: 10px; }
+.wrapper { margin-top: -5px; }
+.bow { font-size: 28px; margin-top: -15px; }
+
+.click-hint { color: #888; font-size: 14px; margin-top: 20px; }
+
+/* HIỆU ỨNG NỔ ICON KHI CLICK VÀO BÓ HOA */
+.burst-icon {
+    position: absolute;
+    font-size: 24px;
+    animation: burstOut 0.8s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes burstOut {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* POPUP THIỆP (FONT TO ĐẬM NHƯ ẢNH) */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.35); z-index: 20;
+    display: flex; justify-content: center; align-items: center;
+}
+.modal-card {
+    background: white; 
+    padding: 35px 30px; 
+    border-radius: 25px; 
+    width: 380px;
+    text-align: center; 
+    border: 2px solid #ffccd5; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    animation: popUp 0.3s ease;
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Tiêu đề thiệp to, đậm, rõ nét như ảnh */
+.modal-card h3 { 
+    color: #d81b60; 
+    font-size: 22px; 
+    font-weight: 800; 
+    margin-top: 0; 
+    margin-bottom: 18px; 
+}
+
+.modal-card p {
+    color: #444; 
+    font-size: 14px; 
+    line-height: 1.7; 
+    text-align: left;
+    min-height: 110px; 
+    margin-bottom: 25px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.next-wish {
+    color: #d81b60;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.next-wish:hover { text-decoration: underline; color: #ad1457; }
+
+.close-btn {
+    background: linear-gradient(135deg, #ff4081, #d81b60); 
+    color: white; 
+    border: none; 
+    padding: 10px 35px;
+    border-radius: 20px; 
+    font-size: 15px; 
+    cursor: pointer; 
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+    transition: 0.2s;
+}
+
+.close-btn:hover { transform: scale(1.05); }
+/* Vô hiệu hóa hiệu ứng hiển thị menu/icon AI nổi của trình duyệt khi di chuột vào ảnh */
+.bouquet-container img {
+    pointer-events: none; /* Giúp chuột tương tác xuyên qua ảnh nhận vào khung bọc bên ngoài */
+}
